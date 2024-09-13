@@ -3,4 +3,8 @@
     <string name="nhap_a">Nhap A</string>
     <string name="nhap_b">Nhap B</string>
     <string name="ket_qua">Ket qua</string>
+    <string name="tong">Tong</string>
+    <string name="hieu">Hieu</string>
+    <string name="tich">Tich</string>
+    <string name="thuong">thuong</string>
 </resources>
