@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">F2C C2F</string>
+    <string name="fahrenheit">Fahrenheit</string>
+    <string name="celsius">Celsius</string>
+    <string name="convert_to_celsius">Convert To\nCelsius</string>
+    <string name="convert_to_fahrenheit">Convert To\nFahrenheit</string>
+    <string name="clear">Clear</string>
 </resources>
