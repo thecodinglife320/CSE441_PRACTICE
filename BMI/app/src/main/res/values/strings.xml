@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">BMI</string>
+    <string name="tinh_chi_so_bmi">Tinh chi so BMI</string>
+    <string name="nhap_ten">Nhap ten</string>
+    <string name="chieu_cao">Chieu cao</string>
+    <string name="can_nang">Can nang</string>
+    <string name="tinh_ibm_va_chuan_doan">Tinh IBM va chuan doan</string>
+    <string name="advice1">Bạn đang gặp phải tình trạng thiếu cân, vì thế nên áp dụng các phương pháp ăn uống và luyện tập để tăng trọng lượng cơ thể.</string>
+    <string name="advice2">Bạn đang sở hữu cân nặng khỏe mạnh, cần duy trì quá trình ăn uống và sinh hoạt như thường ngày.</string>
+    <string name="advice3">Bạn đang trong tình trạng thừa cân, cần áp dụng thực đơn ăn kiêng hợp lý cùng việc luyện tập khoa học để lấy lại vóc dáng chuẩn nhất.</string>
+    <string name="advice4">Bạn đang bị béo phì và tình trạng này có thể khiến bạn gặp rất nhiều vấn đề về sức khỏe cũng như trong sinh hoạt.</string>
 </resources>
