@@ -20,38 +20,42 @@ public class MainViewModel extends ViewModel {
     }
 
     public void chuanDoan(){
+        if(name.isEmpty() || canNang.isEmpty() || chieuCao.isEmpty()){
+            kqChuanDoan.setValue("Chua nhap du thong tin");
+        }else{
+            float bmi = Float.parseFloat(canNang)/(Float.parseFloat(chieuCao)*Float.parseFloat(chieuCao));
+            String chuanDoan;
+            String advice;
 
-        float bmi = Float.parseFloat(canNang)/(Float.parseFloat(chieuCao)*Float.parseFloat(chieuCao));
-        String chuanDoan;
-        String advice;
+            if (bmi<18){
+                chuanDoan = "Ban gay";
+                advice = context.getString(R.string.advice1);
+            }
+            else if (bmi<=24.9){
+                chuanDoan = "Ban binh thuong";
+                advice = context.getString(R.string.advice2);
+            }
+            else if (bmi<=29.9){
+                chuanDoan = "Ban beo phi cap do 1";
+                advice = context.getString(R.string.advice3);
+            }
+            else if (bmi<=34.9){
+                chuanDoan = "Ban beo phi cap do 2";
+                advice = context.getString(R.string.advice4);
+            }
+            else{
+                chuanDoan = "Ban beo phi cap do 3";
+                advice = context.getString(R.string.advice4);
+            }
 
-        if (bmi<18){
-            chuanDoan = "Ban gay";
-            advice = context.getString(R.string.advice1);
-        }
-        else if (bmi<=24.9){
-            chuanDoan = "Ban binh thuong";
-            advice = context.getString(R.string.advice2);
-        }
-        else if (bmi<=29.9){
-            chuanDoan = "Ban beo phi cap do 1";
-            advice = context.getString(R.string.advice3);
-        }
-        else if (bmi<=34.9){
-            chuanDoan = "Ban beo phi cap do 2";
-            advice = context.getString(R.string.advice4);
-        }
-        else{
-            chuanDoan = "Ban beo phi cap do 3";
-            advice = context.getString(R.string.advice4);
+            String builder = "Ten: " + name + '\n' +
+                    "Can nang: " + canNang + " kg" + '\n' +
+                    "Chieu cao: " + chieuCao + " m" + '\n' +
+                    "Chi so BMI: " + String.format(Locale.getDefault(), "%.1f", bmi) + '\n' +
+                    "Chuan doan: " + chuanDoan+'\n'+
+                    "Loi khuyen: " + advice;
+            kqChuanDoan.setValue(builder);
         }
 
-        String builder = "Ten: " + name + '\n' +
-                "Can nang: " + canNang + " kg" + '\n' +
-                "Chieu cao: " + chieuCao + " m" + '\n' +
-                "Chi so BMI: " + String.format(Locale.getDefault(), "%.1f", bmi) + '\n' +
-                "Chuan doan: " + chuanDoan+'\n'+
-                "Loi khuyen: " + advice;
-        kqChuanDoan.setValue(builder);
     }
 }
