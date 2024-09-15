@@ -14,22 +14,24 @@
 
         <EditText
             android:id="@+id/doC"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
+            android:layout_width="110dp"
+            android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="8dp"
             android:drawableEnd="@drawable/temperature_celsius"
             android:importantForAutofill="no"
             android:inputType="number|numberDecimal"
+            android:text="@={viewmodel.doC}"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="LabelFor" />
 
         <EditText
+            android:text="@={viewmodel.doF}"
             android:id="@+id/doF"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
+            android:layout_width="110dp"
+            android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="40dp"
             android:drawableEnd="@drawable/temperature_fahrenheit"
@@ -43,6 +45,7 @@
             android:id="@+id/guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#A01A1A"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="100dp" />
 
@@ -76,6 +79,7 @@
             app:layout_constraintTop_toBottomOf="@id/guideline" />
 
         <Button
+            android:onClick="@{()->viewmodel.c2f()}"
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,6 +91,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:onClick="@{()->viewmodel.f2c()}"
             android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -102,14 +107,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:layout_marginEnd="60dp"
             android:background="@android:color/holo_orange_dark"
+            android:text="@{viewmodel.C2F}"
             android:textColor="@color/black"
+            android:textDirection="ltr"
             android:textSize="20sp"
             android:textStyle="bold"
             app:drawableEndCompat="@drawable/temperature_fahrenheit"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintHorizontal_bias="0.15"
             app:layout_constraintStart_toEndOf="@+id/button3"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -118,14 +124,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:layout_marginEnd="60dp"
             android:background="@android:color/holo_orange_dark"
+            android:text="@={viewmodel.F2C}"
             android:textColor="@color/black"
+            android:textDirection="ltr"
             android:textSize="20sp"
             android:textStyle="bold"
             app:drawableEndCompat="@drawable/temperature_celsius"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintHorizontal_bias="0.15"
             app:layout_constraintStart_toEndOf="@+id/button4"
             app:layout_constraintTop_toTopOf="@+id/guideline" />
 
