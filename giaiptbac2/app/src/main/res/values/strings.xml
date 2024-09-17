@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Giai pt bac 2</string>
+    <string name="nhap_a">Nhap a</string>
+    <string name="nhap_b">Nhap b</string>
+    <string name="nhap_c">Nhap c</string>
+    <string name="giai_phuong_trinh_bac_2">Giai phuong trinh bac 2</string>
+    <string name="tiep_tuc">Tiep tuc</string>
+    <string name="giai_pt">Giai PT</string>
+    <string name="thoat">Thoat</string>
 </resources>
