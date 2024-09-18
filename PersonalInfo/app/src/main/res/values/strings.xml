@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Personal Info</string>
+    <string name="thong_tin_ca_nhan">Thong tin ca nhan</string>
+    <string name="ho_ten">Ho ten</string>
+    <string name="cmnd">CMND</string>
+    <string name="bang_cap">Bang cap</string>
+    <string name="trung_cap">Trung cap</string>
+    <string name="cao_dang">Cao dang</string>
+    <string name="dai_hoc">Dai hoc</string>
+    <string name="so_thich">So thich</string>
+    <string name="doc_sach">Doc sach</string>">
+    <string name="xem_phim">Xem phim</string>
+    <string name="nghe_nhac">Nghe nhac</string>
+    <string name="thong_tin_bo_sung">Thong tin bo sung</string>
+    <string name="gui_thong_tin">Gui thong tin</string>">
 </resources>
