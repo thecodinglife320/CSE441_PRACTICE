@@ -8,213 +8,234 @@
             name="viewmodel"
             type="com.hfad.personalinfo.MainViewModel" />
     </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="20dp">
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="60dp" />
+            android:padding="20dp">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="280dp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="60dp" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="120dp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="280dp" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="16dp"
-            android:labelFor="@id/name"
-            android:text="@string/ho_ten"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="parent" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="120dp" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="16dp"
-            android:labelFor="@id/CMND"
-            android:text="@string/cmnd"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline3"
-            app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:labelFor="@id/name"
+                android:text="@string/ho_ten"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        <EditText
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginBottom="8dp"
-            android:ems="10"
-            android:importantForAutofill="no"
-            android:inputType="text"
-            android:minHeight="48dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
-            app:layout_constraintStart_toEndOf="@+id/textView2" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:labelFor="@id/CMND"
+                android:text="@string/cmnd"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline3"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        <EditText
-            android:id="@+id/CMND"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginBottom="8dp"
-            android:autofillHints=""
-            android:ems="10"
-            android:inputType="number"
-            android:minHeight="48dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline3"
-            app:layout_constraintStart_toEndOf="@+id/textView3" />
+            <EditText
+                android:text="@={viewmodel.ten}"
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minHeight="48dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline"
+                app:layout_constraintStart_toEndOf="@+id/textView2" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="200dp" />
+            <EditText
+                android:text="@={viewmodel.cmnd}"
+                android:id="@+id/CMND"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="8dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:inputType="number"
+                android:minHeight="48dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline3"
+                app:layout_constraintStart_toEndOf="@+id/textView3" />
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/bang_cap"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="200dp" />
 
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/guideline4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6">
-
-            <RadioButton
-                android:id="@+id/trung_cap"
+            <TextView
+                android:id="@+id/textView6"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/trung_cap" />
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/bang_cap"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
-            <RadioButton
-                android:id="@+id/cao_dang"
+            <RadioGroup
+                android:id="@+id/radioGroup"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/cao_dang" />
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/guideline4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6">
 
-            <RadioButton
-                android:id="@+id/dai_hoc"
+                <RadioButton
+                    android:id="@+id/trung_cap"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:checked="@={viewmodel.trungCap}"
+                    android:text="@string/trung_cap"
+                    tools:ignore="VisualLintButtonSize" />
+
+                <RadioButton
+                    android:id="@+id/cao_dang"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:checked="@={viewmodel.caoDang}"
+                    android:text="@string/cao_dang"
+                    tools:ignore="VisualLintButtonSize" />
+
+                <RadioButton
+                    android:id="@+id/dai_hoc"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:checked="@{viewmodel.daiHoc}"
+                    android:text="@string/dai_hoc"
+                    tools:ignore="VisualLintButtonSize" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView7"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/dai_hoc" />
-        </RadioGroup>
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/so_thich"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/so_thich"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline4" />
+            <CheckBox
+                android:checked="@={viewmodel.docSach}"
+                android:id="@+id/doc_sach"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/doc_sach"
+                tools:ignore="VisualLintOverlap"
+                tools:layout_editor_absoluteX="55dp"
+                tools:layout_editor_absoluteY="124dp" />
 
-        <CheckBox
-            android:id="@+id/doc_sach"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:text="@string/doc_sach"
-            tools:layout_editor_absoluteX="55dp"
-            tools:layout_editor_absoluteY="124dp" />
+            <CheckBox
+                android:checked="@={viewmodel.xemPhim}"
+                android:id="@+id/xem_phim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/xem_phim"
+                tools:layout_editor_absoluteX="244dp"
+                tools:layout_editor_absoluteY="124dp"
+                tools:ignore="VisualLintOverlap" />
 
-        <CheckBox
-            android:id="@+id/xem_phim"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:text="@string/xem_phim"
-            tools:layout_editor_absoluteX="244dp"
-            tools:layout_editor_absoluteY="124dp" />
+            <CheckBox
+                android:checked="@={viewmodel.ngheNhac}"
+                android:id="@+id/nghe_nhac"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/nghe_nhac"
+                tools:layout_editor_absoluteX="150dp"
+                tools:layout_editor_absoluteY="124dp"
+                tools:ignore="VisualLintOverlap" />
 
-        <CheckBox
-            android:id="@+id/nghe_nhac"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:text="@string/nghe_nhac"
-            tools:layout_editor_absoluteX="150dp"
-            tools:layout_editor_absoluteY="124dp" />
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/flow"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:constraint_referenced_ids="doc_sach,nghe_nhac,xem_phim"
+                app:flow_horizontalStyle="spread_inside"
+                app:layout_constraintBottom_toTopOf="@+id/guideline2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-        <androidx.constraintlayout.helper.widget.Flow
-            android:id="@+id/flow"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:constraint_referenced_ids="doc_sach,nghe_nhac,xem_phim"
-            app:flow_horizontalStyle="spread_inside"
-            app:layout_constraintBottom_toTopOf="@+id/guideline2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:labelFor="@id/extra"
+                android:text="@string/thong_tin_bo_sung"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:labelFor="@id/extra"
-            android:text="@string/thong_tin_bo_sung"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+            <EditText
+                android:text="@={viewmodel.extra}"
+                android:id="@+id/extra"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="text|textMultiLine"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8"
+                tools:ignore="VisualLintTextFieldSize" />
 
-        <EditText
-            android:id="@+id/extra"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:importantForAutofill="no"
-            android:inputType="text|textMultiLine"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gui_thong_tin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/extra" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/gui_thong_tin"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/extra" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
