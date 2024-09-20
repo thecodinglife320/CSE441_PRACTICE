@@ -1,5 +1,6 @@
 package com.hfad.giaiptbac1;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -23,5 +24,15 @@ public class MainActivity extends AppCompatActivity {
 
         //set lifecycle
         binding.setLifecycleOwner(this);
+
+        //event
+        binding.button.setOnClickListener(v -> {
+            String kq = viewModel.giai_pt_bac1();
+
+            //intent
+            Intent intent = new Intent(this, ResultActivity.class);
+            intent.putExtra("ketqua", kq);
+            startActivity(intent);
+        });
     }
 }

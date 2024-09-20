@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Giai pt bac 1</string>
+    <string name="nhap_a">Nhập a</string>
+    <string name="nhap_b">Nhập b</string>">
+    <string name="ket_qua">Kết quả</string>
+    <string name="ket_qua_giai_pt_bac1">Kết quả giải pt bậc 1</string>
+    <string name="back">back</string>
 </resources>
