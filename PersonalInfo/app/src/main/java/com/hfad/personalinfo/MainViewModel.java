@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel;
 public class MainViewModel extends ViewModel {
 
     public boolean trungCap = false;
-    public boolean daiHoc = false;
+    public boolean daiHoc = true;
     public boolean caoDang = false;
     public boolean docSach = false;
     public boolean ngheNhac = false;
