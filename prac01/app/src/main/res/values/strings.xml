@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Prac01</string>
+    <string name="enter_your_info">Enter your infomation</string>
+    <string name="enter_name">Enter name</string>
+    <string name="enter_gpa">Enter GPA</string>
+    <string name="submit">Submit</string>
 </resources>
