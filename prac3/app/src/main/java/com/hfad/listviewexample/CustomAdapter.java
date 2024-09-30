@@ -14,9 +14,11 @@ import java.util.List;
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CountryViewHolder> {
 
     private List<Country> countries;
+    private OnItemClickListener listener;
 
-    public CustomAdapter(List<Country> countries) {
+    public CustomAdapter(List<Country> countries, OnItemClickListener listener) {
         this.countries = countries;
+        this.listener = listener;
     }
 
     @NonNull
@@ -31,6 +33,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CountryVie
         holder.flag.setImageResource(countries.get(position).getFlag());
         holder.thuDo.setText(countries.get(position).getThuDo());
         holder.tenNuoc.setText(countries.get(position).getName());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onItemClick(position);
+            }
+        });
     }
 
     @Override
@@ -50,5 +58,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CountryVie
             tenNuoc = itemView.findViewById(R.id.ten_nuoc);
             thuDo = itemView.findViewById(R.id.ten_thu_do);
         }
+    }
+
+    // Interface để xử lý sự kiện click
+    public interface OnItemClickListener {
+        void onItemClick(int position);
     }
 }
