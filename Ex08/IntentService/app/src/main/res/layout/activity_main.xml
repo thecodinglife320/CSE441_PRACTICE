@@ -25,4 +25,14 @@
         android:src="@android:drawable/ic_media_play"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/btn_play"
+        app:layout_constraintTop_toBottomOf="@+id/btn_play" />
 </androidx.constraintlayout.widget.ConstraintLayout>
