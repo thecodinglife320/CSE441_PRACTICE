@@ -1,0 +1,11 @@
+{
+  "id": "SV001",
+  "full_name": "Nguyen Van A",
+  "gender": "Male",
+  "birthDate": "1999-05-15",
+  "email": "nguyenvana@example.com",
+  "address": "123 Le Loi, Hanoi",
+  "major": "Computer Science",
+  "gqa": 3.5,
+  "year": 2024
+}
