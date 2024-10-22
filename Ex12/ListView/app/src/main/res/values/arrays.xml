@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="phone_models">
+        <item>Nokia 6110</item>
+        <item>Samsung Galaxy S4</item>
+        <item>LG G3</item>
+        <item>Sony Xperia S</item>
+        <item>Motorola Moto X</item>
+        <item>Apple iPhone 5</item>
+        <item>HTC One M8</item>
+    </string-array>
+</resources>
