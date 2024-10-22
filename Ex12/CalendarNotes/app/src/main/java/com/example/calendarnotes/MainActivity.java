@@ -2,15 +2,11 @@ package com.example.calendarnotes;
 
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
-import android.widget.TimePicker;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.calendarnotes.databinding.ActivityMainBinding;
 
@@ -33,9 +29,7 @@ public class MainActivity extends AppCompatActivity {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         binding.today.setText(simpleDateFormat.format(currentDate));
 
-        binding.remindBtn.setOnClickListener(v -> {
-            showTimePickerDialog();
-        });
+        binding.remindBtn.setOnClickListener(v -> showTimePickerDialog());
 
         ArrayList<String> works = new ArrayList<>();
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, works);
@@ -61,12 +55,19 @@ public class MainActivity extends AppCompatActivity {
         TimePickerDialog timePickerDialog = new TimePickerDialog(
                 this,
                 (view, hourOfDay, minute1) -> {
-                    String selectedTime = hourOfDay + ":" + minute1;
+                    String selectedTime = "";
+                    if (hourOfDay>=12){
+                        hourOfDay-=12;
+                        selectedTime = hourOfDay + ":" + String.format("%02d", minute1)+" chieu";
+                    }else{
+                        selectedTime = hourOfDay + ":" + String.format("%02d", minute1)+" sang";
+                    }
                     binding.textClock2.setText(selectedTime);
+                    Log.d("TAG", "showTimePickerDialog: "+hourOfDay+":"+minute1);
                 },
                 hour,
                 minute,
-                false // Use 24-hour format
+                true // Use 24-hour format
         );
         timePickerDialog.show();
     }
