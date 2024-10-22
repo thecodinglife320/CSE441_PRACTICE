@@ -3,10 +3,10 @@ package com.example.calendarnotes;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.calendarnotes.databinding.ActivityMainBinding;
 
@@ -31,15 +31,23 @@ public class MainActivity extends AppCompatActivity {
 
         binding.remindBtn.setOnClickListener(v -> showTimePickerDialog());
 
-        ArrayList<String> works = new ArrayList<>();
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, works);
-        binding.workList.setAdapter(adapter);
+        ArrayList<String> listSang = new ArrayList<>();
+        ArrayList<String> listChieu = new ArrayList<>();
+        WorkListChieuAd adapterChieu = new WorkListChieuAd(listChieu);
+        WorkListSangAd adapterSang = new WorkListSangAd(listSang);
+        binding.workListSang.setAdapter(adapterSang);
+        binding.workListChieu.setAdapter(adapterChieu);
+        binding.workListSang.setLayoutManager(new LinearLayoutManager(this));
+        binding.workListChieu.setLayoutManager(new LinearLayoutManager(this));
 
         binding.addBtn.setOnClickListener(v -> {
             String work = binding.workEdt.getText().toString();
             if (!work.isEmpty()) {
-                adapter.add(work+" - "+binding.textClock2.getText().toString());
-                adapter.notifyDataSetChanged();
+                if(binding.textClock2.getText().toString().contains("sang")){
+                    adapterSang.addWork(work+" - "+binding.textClock2.getText().toString());
+                }else{
+                    adapterChieu.addWork(work+" - "+binding.textClock2.getText().toString());
+                }
                 binding.workEdt.setText("");
             }else {
                 binding.workEdt.setError("Please enter a work");

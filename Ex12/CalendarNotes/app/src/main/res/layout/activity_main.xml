@@ -63,15 +63,26 @@
         app:layout_constraintStart_toStartOf="@+id/remind_btn"
         app:layout_constraintTop_toBottomOf="@+id/remind_btn" />
 
-    <ListView
-        android:id="@+id/work_list"
-        android:layout_width="0dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/work_list_sang"
+        android:layout_width="150dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
+        android:background="@color/teal_200"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_btn" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/work_list_chieu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#57C670"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_btn"
-        tools:ignore="VisualLintBounds" />
+        app:layout_constraintStart_toEndOf="@+id/work_list_sang"
+        app:layout_constraintTop_toTopOf="@+id/work_list_sang" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
